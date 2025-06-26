@@ -1,10 +1,54 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Квест</title>
+  <meta charset="UTF-8">
+  <title>Quest Map</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      min-width: 100vw;
+      overflow: hidden;
+      background: #000;
+      position: relative;
+    }
+    .bg {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      object-fit: contain;   /* Вот ключевой момент */
+      z-index: 0;
+      pointer-events: none;  /* Не мешает кликам по кнопке */
+    }
+    .next-btn {
+      position: fixed;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      z-index: 1;
+      cursor: pointer;
+      width: 150px;
+      height: 59px;
+      object-fit: contain;
+      margin-bottom: 0;
+      transition: filter 0.15s, transform 0.1s;
+    }
+    .next-btn:hover {
+      filter: brightness(1.15);
+      transform: translateX(-50%) scale(1.05);
+    }
+  </style>
 </head>
 <body>
+  <img class="bg" src="quest01.png" alt="Quest Map">
+  <a href="quest2.html">
+    <img class="next-btn" src="next.png" alt="Далее">
+  </a>
 </body>
 </html>
